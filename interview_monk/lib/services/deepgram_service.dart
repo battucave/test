@@ -1,5 +1,3 @@
-import 'package:deepgram_speech_to_text/deepgram_speech_to_text.dart';
-
 class DeepgramService {
   final String apiKey = 'YOUR_DEEPGRAM_API_KEY'; // Placeholder
 

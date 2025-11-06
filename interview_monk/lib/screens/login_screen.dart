@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:interview_monk/bloc/auth_bloc.dart';
-import 'package.dart';
 import 'package:interview_monk/widgets/primary_button.dart';
 
 class LoginScreen extends StatefulWidget {

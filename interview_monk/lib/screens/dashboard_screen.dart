@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:interview_monk/theme.dart';
-import 'package:interview_monk/widgets/primary_button.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});

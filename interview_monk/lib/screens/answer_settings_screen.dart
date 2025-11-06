@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AnswerSettingsScreen extends StatelessWidget {
+class AnswerSettingsScreen extends StatefulWidget {
   const AnswerSettingsScreen({super.key});
+
+  @override
+  State<AnswerSettingsScreen> createState() => _AnswerSettingsScreenState();
+}
+
+class _AnswerSettingsScreenState extends State<AnswerSettingsScreen> {
+  final List<bool> _selections = [true, false];
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +23,26 @@ class AnswerSettingsScreen extends StatelessWidget {
             'Behavioral Answer Structure',
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
-          RadioListTile(
-            title: const Text('STAR'),
-            subtitle: const Text('Situation, Task, Action, Result'),
-            value: 'STAR',
-            groupValue: 'STAR',
-            onChanged: (value) {},
-          ),
-          RadioListTile(
-            title: const Text('PAR'),
-            subtitle: const Text('Problem, Action, Result'),
-            value: 'PAR',
-            groupValue: 'STAR',
-            onChanged: (value) {},
+          const SizedBox(height: 16.0),
+          ToggleButtons(
+            isSelected: _selections,
+            onPressed: (int index) {
+              setState(() {
+                for (int i = 0; i < _selections.length; i++) {
+                  _selections[i] = i == index;
+                }
+              });
+            },
+            children: const [
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text('STAR'),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: Text('PAR'),
+              ),
+            ],
           ),
           const SizedBox(height: 24.0),
           const Text(
